@@ -1,6 +1,13 @@
 # moneytree-activation
 
-The signed activation list for **The Money Tree**. Nothing else belongs in this repository.
+The signed activation list for **The Money Tree**, plus the two pages GitHub Pages serves
+from it. Nothing else belongs in this repository.
+
+`index.html` and `privacy.html` exist because Google will not switch an OAuth app out of
+Testing without a reachable home page and privacy policy URL. They are served at
+<https://mccandch.github.io/moneytree-activation/> and are **not** part of the activation
+mechanism — nothing in the application fetches them, and editing them cannot lock anyone
+out.
 
 `whitelist.json` holds salted SHA-256 hashes of the accounts allowed to activate, and an
 ECDSA P-256 signature over them. It is fetched at activation time and verified against a

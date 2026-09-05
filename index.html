@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Money Tree</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 5rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  h1 { font-size: 1.9rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .sub { margin: 0 0 2rem; opacity: .7; }
+  h2 { font-size: 1.05rem; margin: 2.25rem 0 .5rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+  footer { margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid rgba(128,128,128,.35); font-size: .9rem; opacity: .75; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+
+<h1>The Money Tree</h1>
+<p class="sub">A private desktop application for automated options trading through Interactive Brokers.</p>
+
+<p>
+  The Money Tree is a Windows desktop application built and maintained by Chad McCandless for
+  his own use and for a small number of named individuals. It connects to Interactive Brokers
+  Trader Workstation on the machine it runs on, evaluates market-regime signals, and places and
+  manages options orders according to templates the operator configures.
+</p>
+
+<p>
+  It is not sold, not distributed publicly, and not available for general sign-up. This page
+  exists because the application uses Google Sign-In once, at activation, and Google requires a
+  home page and a privacy policy for any application that does so.
+</p>
+
+<h2>How Google Sign-In is used</h2>
+<ul>
+  <li>The first time the application runs on a machine, it asks the operator to sign in with Google.</li>
+  <li>It reads the verified email address from that sign-in and checks it against a list of
+      permitted accounts, published as salted hashes and verified by signature.</li>
+  <li>If the address is on the list, the application records the activation locally on that
+      machine and never contacts Google again — not on any later launch, and not in the
+      background.</li>
+</ul>
+
+<p>
+  Google Sign-In is used solely to confirm identity at activation. The application requests no
+  access to Gmail, Drive, Calendar, Contacts, or any other Google service, and holds no
+  credentials that would let it reach one.
+</p>
+
+<h2>Privacy</h2>
+<p>
+  The <a href="privacy.html">privacy policy</a> sets out exactly what is collected, where it is
+  stored, and what it is never used for.
+</p>
+
+<footer>
+  Contact: <a href="mailto:chad.mccandless@gmail.com">chad.mccandless@gmail.com</a><br>
+  Last updated 4 September 2026.
+</footer>
+
+</body>
+</html>
