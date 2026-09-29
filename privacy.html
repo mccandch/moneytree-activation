@@ -24,7 +24,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="sub">The Money Tree desktop application · last updated 4 September 2026</p>
+<p class="sub">The Money Tree desktop application · last updated 28 September 2026</p>
 
 <p>
   The Money Tree is a Windows desktop application used by its author and a small number of
@@ -38,10 +38,15 @@
   with an identifier derived from the computer it was activated on and the time of activation.
 </p>
 <p>
-  This happens once, the first time the application runs on a given machine. The application
+  This happens once, the first time the application runs on a given machine. Activation
   requests only the <code>openid</code>, <code>email</code> and <code>profile</code> scopes — the
   minimum needed to learn a verified email address. It requests no access to Gmail, Drive,
   Calendar, Contacts, or any other Google service.
+</p>
+<p>
+  The one exception is optional and separate: if the operator chooses to turn on
+  <a href="#drive-backups">backups to Google Drive</a>, described below. Nothing about it happens
+  unless the operator connects Google Drive themselves.
 </p>
 
 <h2>What it is used for</h2>
@@ -67,17 +72,53 @@
 
 <h2>After activation</h2>
 <p>
-  Once a machine is activated, the application never contacts Google again. It stores no Google
+  Once a machine is activated, activation never contacts Google again. It stores no Google
   refresh token and holds no ongoing access to the Google account. Signing in a second time is
-  not required and does not happen.
+  not required and does not happen. The only ongoing Google access the application can ever
+  hold is the optional Drive backup below, and only if the operator turns it on.
 </p>
+
+<h2 id="drive-backups">Optional: backups to your Google Drive</h2>
+<p>
+  The operator may choose to back up the application's own trading database to their own Google
+  Drive. It is off unless they turn it on in the application's settings and click
+  <em>Connect Google Drive</em>, which shows Google's standard consent screen.
+</p>
+<ul>
+  <li>
+    <strong>Access requested:</strong> only the <code>drive.file</code> scope. With it the
+    application can see and manage only the files it creates itself. It cannot see, read, or
+    change any other file in the operator's Drive.
+  </li>
+  <li>
+    <strong>What is uploaded:</strong> a compressed copy of the application's local database,
+    which holds the operator's own trade records and application settings, once per trading day.
+    It goes into a folder named <em>Money Tree Backups</em> that the application creates in the
+    operator's own Drive. Older copies there are deleted automatically on a fixed schedule.
+    No passwords, keys, or other credentials are included.
+  </li>
+  <li>
+    <strong>Where it goes:</strong> only to the operator's own Google Drive. Nothing is sent to
+    the developer or to anyone else.
+  </li>
+  <li>
+    <strong>What is stored on the computer:</strong> a Google refresh token, so backups can run
+    unattended. It is encrypted with Windows data protection, is usable only by that Windows
+    user on that computer, and is never transmitted anywhere except to Google.
+  </li>
+</ul>
 
 <h2>Deleting the data</h2>
 <p>
   Deleting the application's data folder, or the activation file inside it, removes the stored
-  address from the machine completely. To revoke the application's one-time access from the
-  Google side, use
-  <a href="https://myaccount.google.com/permissions">Google Account → Third-party apps</a>.
+  address from the machine completely. To revoke the application's access from the Google side,
+  use <a href="https://myaccount.google.com/permissions">Google Account → Third-party apps</a>.
+</p>
+<p>
+  If Drive backups were turned on: <em>Disconnect</em> in the application's settings deletes the
+  stored token from the computer, and revoking access as above stops any further uploads. The
+  backups already in Drive are the operator's own files; delete the <em>Money Tree Backups</em>
+  folder to remove them.
 </p>
 
 <h2>Children</h2>
